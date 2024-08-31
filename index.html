@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">WIP</div>
+        <ul data-aos="fade-down" data-aos-duration="800">
+          <li>Home</li>
+          <li>News</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div
+        class="banner"
+        style="background-image: url('./assets/img/HOTAIRBALOON/Hotairballoon.jpg')"
+      >
+        <div
+          class="glass-wrapper"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        ></div>
+      </div>
+      <div class="hero-title">
+        <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
+          WHERE IN
+        </p>
+        <p
+          class="country"
+          class="country"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="700"
+        >
+          PAMPANGA
+        </p>
+        <div
+          class="details"
+          class="details"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          data-aos-duration="700"
+        >
+          Your passport to the vibrant places, culture and colorful festivals of Pampanga. Prepare to be enchanted by the aromatic brews, festive vibes, and warm hospitality that define our province's essence.
+        </div>
+        <div
+          class="explore"
+          class="explore"
+          data-aos="fade-left"
+          data-aos-delay="800"
+          data-aos-duration="700"
+        >
+          <button>Explore</button>
+        </div>
+      </div>
+      <div class="tourist-list">
+        <ul class="place-list">
+          <li
+            class="active"
+            data-aos="fade-down"
+            data-aos-delay="600"
+            data-aos-duration="700"
+            data-img="./assets/img/HOTAIRBALOON/Hotairballoon.jpg"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/HOTAIRBALOON/Hotairballoon.jpg')"
+            >
+              <div class="details">
+                <p class="province">CLARK</p>
+                <p class="place-name">Hot Air Baloon festival </p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/cafe/CafeHere.png"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/Cafe/CafeHere.png')"
+            >
+              <div class="details">
+                <p class="province">CLARK</p>
+                <p class="place-name">Lala Garden cafe</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/Cuisine/Sisig.jpg"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/Cuisine/Sisig.jpg')"
+            >
+              <div class="details">
+                <p class="province">PAMPANGA</p>
+                <p class="place-name">CUISINE</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/Arayat/ARAYAT.jpg"
+            data-aos="fade-down"
+            data-aos-delay="850"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/Arayat/ARAYAT.jpg')"
+            >
+              <div class="details">
+                <p class="province">ARAYAT</p>
+                <p class="place-name">Mt. Arayat</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <style></style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    let places = document.querySelectorAll(".place-list li");
+    let active = "/assets/img/HOTAIRBALOON/Hotairballoon.jpg";
+
+    places.forEach((e) => {
+      e.addEventListener("mouseenter", (event) => {
+        places.forEach((e) => {
+          e.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        active = event.target.getAttribute("data-img");
+        let banner = document.querySelector(".banner");
+        banner.style.backgroundImage = `url('${active}')`;
+      });
+    });
+  </script>
+</html>
